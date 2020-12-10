@@ -1,0 +1,17 @@
+<server description="Jakarta EE 9.0 Sample server">
+    <featureManager>
+        <feature>jakartaee-9.0</feature>
+    </featureManager>
+
+    <variable name="default.http.port" defaultValue="9080"/>
+    <variable name="default.https.port" defaultValue="9443"/>
+    <variable name="app.context.root" defaultValue="jakarta-sample"/>
+
+    <basicRegistry id="basic" realm="BasicRealm">
+        <!-- <user name="yourUserName" password="" />  -->
+    </basicRegistry>
+
+    <httpEndpoint httpPort="${default.http.port}"
+                  httpsPort="${default.https.port}" id="defaultHttpEndpoint"  host="*" />
+    <applicationManager autoExpand="true"/>
+</server>
