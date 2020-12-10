@@ -13,11 +13,11 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/HelloWorld")
 public class HelloWorldServlet extends HttpServlet {
 
-    static String PAGE_HEADER = "<html><head><title>helloworld</title></head><body>";
+    static String PAGE_HEADER = "<html><head><title>Hello World Jakarta</title></head><body>";
     static String PAGE_FOOTER = "</body></html>";
 
     @Inject
-    private HelloService ejb;
+    private HelloWorldService ejb;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException,ServletException {
@@ -26,7 +26,7 @@ public class HelloWorldServlet extends HttpServlet {
         writer.println(PAGE_HEADER);
 
         try {
-            writer.println(ejb.createHelloMessage("Jakarta EE 9"));
+            writer.println(ejb.createHelloMessage("Jakarta EE 9.0"));
         } catch (Exception e) {
             e.printStackTrace();
         }

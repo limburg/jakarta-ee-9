@@ -1,9 +1,9 @@
-package jakarta-ee.sample;
+package ${package};
 import jakarta.ejb.Stateless;
 
 @Stateless
-public class HelloService {
-    public String  createHelloMessage(String name) throws Exception {
-        return "Hello "+name;
+public class HelloWorldService {
+    public String createHelloMessage(String name) {
+        return "Hello " + name;
     }
 }
